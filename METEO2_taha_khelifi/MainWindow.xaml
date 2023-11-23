@@ -25,7 +25,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Border Background="#2f5cb6"/>
-                <Border Grid.Column ="1" Background="#1f3d7a"/>
+                <Border Grid.Column ="1" Background="#1f3d7a"/> 
                 <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
                 <Image Margin="20" Source="Ressources/Images/partially-cloudy.png"/>
                 <StackPanel Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center">

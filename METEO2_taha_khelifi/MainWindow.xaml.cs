@@ -45,8 +45,9 @@ namespace METEO2_taha_khelifi
                     CurrentCondition currentCondition = myDeserializedClass.current_condition;
 
                     TB_temperature.Text = currentCondition.tmp.ToString() + "°C";
-                    TB_condition.Text = fcstDay0.condition;
-                    
+                    TB_condition.Text = currentCondition.condition;
+                    TB_Aujourdhui.Text = fcstDay0.day_long;
+                    TB_Humidité.Text = currentCondition.humidity.ToString() + "% d'humidité";
 
 
                     return "";

@@ -14,6 +14,31 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!-- nom de la ville dans une combo box -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- TextBlock Ville -->
+            <TextBlock Name="TB_Ville" Grid.Column="0" Foreground="Black" FontSize="30" Text="Ville" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <ComboBox Name="CB_Ville" Grid.Column="1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="30" SelectionChanged="CB_Ville_SelectionChanged">
+                <ComboBoxItem Content="Paris"/>
+                <ComboBoxItem Content="Lyon"/>
+                <ComboBoxItem Content="Marseille"/>
+                <ComboBoxItem Content="Toulouse"/>
+                <ComboBoxItem Content="Nice"/>
+                <ComboBoxItem Content="Nantes"/>
+                <ComboBoxItem Content="Montpellier"/>
+                <ComboBoxItem Content="Strasbourg"/>
+                <ComboBoxItem Content="Bordeaux"/>
+                <ComboBoxItem Content="Lille"/>
+                <ComboBoxItem Content="Annecy"/>
+            </ComboBox>
+        </Grid>
+
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="500"/>
@@ -75,7 +100,7 @@
             HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Name ="TB_haut" Foreground="White" FontSize="15" Text="Max" Margin="0,0,20,0"/>
                     <TextBlock Name="TB_bas" Foreground="White" FontSize="15" Text="Min" Margin="0,0,20,0"/>
-                    <TextBlock Name="TB_ressentie" Foreground="White" FontSize="15" Text="Ressentie"/>
+
                 </StackPanel>
             </Grid>
             <!-- Meteo jour 2 -->
@@ -92,16 +117,15 @@
                 <Border Grid.Column ="1" Background="#1f3d7a"/>
                 <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
                 <Image Margin="20" Source="Ressources/Images/partially-cloudy.png"/>
-                <StackPanel Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center">
-                    <TextBlock Name = "TB_temperatureD"  Foreground="White" FontSize="15" Text="Demain"/>
+                <StackPanel Grid.Column="1" Margin="30,0,0,0" VerticalAlignment="Center">
+
                     <TextBlock Name="TB_conditionD" Foreground="White" FontSize="15" Text="Condition"/>
-                    <TextBlock Name="TB_HumiditéD" Foreground="White" FontSize="15" Text="Precipitation"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal"
                             HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Name ="TB_hautD" Foreground="White" FontSize="15" Text="Max" Margin="0,0,20,0"/>
                     <TextBlock Name="TB_basD" Foreground="White" FontSize="15" Text="Min" Margin="0,0,20,0"/>
-                    <TextBlock Name="TB_ressentieD" Foreground="White" FontSize="15" Text="Ressentie"/>
+
                 </StackPanel>
                 </Grid>
             <!-- Meteo jour 3 -->
@@ -119,15 +143,15 @@
                 <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
                 <Image Margin="20" Source="Ressources/Images/partially-cloudy.png"/>
                 <StackPanel Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center">
-                    <TextBlock Name = "TB_temperatureAD"  Foreground="White" FontSize="15" Text="Apres Demain"/>
+
                     <TextBlock Name="TB_conditionAD" Foreground="White" FontSize="15" Text="Condition"/>
-                    <TextBlock Name="TB_HumiditéAD" Foreground="White" FontSize="15" Text="Precipitation"/>
+
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal"
                             HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Name ="TB_hautAD" Foreground="White" FontSize="15" Text="Max" Margin="0,0,20,0"/>
                     <TextBlock Name="TB_basAD" Foreground="White" FontSize="15" Text="Min" Margin="0,0,20,0"/>
-                    <TextBlock Name="TB_ressentieAD" Foreground="White" FontSize="15" Text="Ressentie"/>
+
                 </StackPanel>
                 </Grid>
             <!-- Meteo jour 4 -->
@@ -145,15 +169,15 @@
                 <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
                 <Image Margin="20" Source="Ressources/Images/partially-cloudy.png"/>
                 <StackPanel Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center">
-                    <TextBlock Name = "TB_temperature3J"  Foreground="White" FontSize="15" Text="Dans 3 jours"/>
+
                     <TextBlock Name="TB_condition3J" Foreground="White" FontSize="15" Text="Condition"/>
-                    <TextBlock Name="TB_Humidité3J" Foreground="White" FontSize="15" Text="Precipitation"/>
+
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal"
                             HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Name ="TB_haut3J" Foreground="White" FontSize="15" Text="Max" Margin="0,0,20,0"/>
                     <TextBlock Name="TB_bas3J" Foreground="White" FontSize="15" Text="Min" Margin="0,0,20,0"/>
-                    <TextBlock Name="TB_ressentie3J" Foreground="White" FontSize="15" Text="Ressentie"/>
+
                 </StackPanel>
             </Grid>
         </Grid>

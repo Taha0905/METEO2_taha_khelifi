@@ -8,7 +8,8 @@
         Title="MainWindow" Height="450" Width="1200">
     <Grid>
 
-        <Grid.RowDefinitions>
+
+    <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
             <RowDefinition Height="75"/>
             <RowDefinition Height="*"/>
@@ -19,23 +20,16 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             
             <!-- TextBlock Ville -->
             <TextBlock Name="TB_Ville" Grid.Column="0" Foreground="Black" FontSize="30" Text="Ville" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
             <ComboBox Name="CB_Ville" Grid.Column="1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="30" SelectionChanged="CB_Ville_SelectionChanged">
-                <ComboBoxItem Content="Paris"/>
-                <ComboBoxItem Content="Lyon"/>
-                <ComboBoxItem Content="Marseille"/>
-                <ComboBoxItem Content="Toulouse"/>
-                <ComboBoxItem Content="Nice"/>
-                <ComboBoxItem Content="Nantes"/>
-                <ComboBoxItem Content="Montpellier"/>
-                <ComboBoxItem Content="Strasbourg"/>
-                <ComboBoxItem Content="Bordeaux"/>
-                <ComboBoxItem Content="Lille"/>
-                <ComboBoxItem Content="Annecy"/>
+
+
             </ComboBox>
         </Grid>
 
@@ -78,7 +72,7 @@
             </Grid.ColumnDefinitions>
 
             <!-- Meteo jour 1 -->
-            <Grid Grid.Column="0" Margin="10">
+            <Grid Name ="Icon" Grid.Column="0" Margin="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="3*"/>
                     <ColumnDefinition Width="5*"/>

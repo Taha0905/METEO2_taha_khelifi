@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net.Http; // pour HttpClient
 using Newtonsoft.Json; // pour JsonConvert
+using METEO2_taha_khelifi.Service;
+using static METEO2_taha_khelifi.MainWindow;
 
 namespace METEO2_taha_khelifi
 {
@@ -22,10 +24,14 @@ namespace METEO2_taha_khelifi
     /// </summary>
     public partial class MainWindow : Window
     {
+        Ville ville;
         public MainWindow()
         {
+            ville = new Ville();
             InitializeComponent();
 
+            CB_Ville.ItemsSource = ville.LsVille;
+            ville.Addville();
         _: GetMeteo("Annecy");
         }
 
@@ -50,6 +56,7 @@ namespace METEO2_taha_khelifi
                     TB_Humidité.Text = currentCondition.humidity.ToString() + "% d'humidité";
                     TB_bas.Text = "Min : " + fcstDay0.tmin.ToString() + "°C";
                     TB_haut.Text = "Max : " + fcstDay0.tmax.ToString() + "°C";
+                    //icon de la meteo
 
                     //Info pour demain
                     FcstDay1 fcstDay1 = myDeserializedClass.fcst_day_1;
@@ -77,6 +84,7 @@ namespace METEO2_taha_khelifi
                     TB_Ville.Text = cityInfo.name + ", " + cityInfo.country;
 
 
+
                     return "";
                 }
                 else
@@ -90,6 +98,7 @@ namespace METEO2_taha_khelifi
             }
         }
 
+
         private void CB_Ville_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (CB_Ville.SelectedItem != null)
@@ -98,6 +107,8 @@ namespace METEO2_taha_khelifi
                 GetMeteo(selectedCity);
             }
         }
+
+
 
         // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
 

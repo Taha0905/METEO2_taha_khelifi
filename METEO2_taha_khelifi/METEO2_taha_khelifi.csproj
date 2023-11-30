@@ -105,5 +105,8 @@
   <ItemGroup>
     <Resource Include="Ressources\Images\partially-cloudy.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Images\ciel.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

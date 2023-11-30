@@ -22,15 +22,20 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             
             <!-- TextBlock Ville -->
             <TextBlock Name="TB_Ville" Grid.Column="0" Foreground="Black" FontSize="30" Text="Ville" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-            <ComboBox Name="CB_Ville" Grid.Column="1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="30" SelectionChanged="CB_Ville_SelectionChanged">
-
-
+            <ComboBox Name="CB_Ville" Grid.Column="1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="30" SelectionChanged="CB_Ville_SelectionChanged">   
             </ComboBox>
+            <!-- TB_Ecrit_Ville-->
+            <TextBox Name="TB_Nouveaux" Grid.Column="2" Foreground="Black" FontSize="30" Text="New" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <!-- Boutton ajouter -->
+            <Button Name="B_Ajouter" Grid.Column="3" Content="Ajouter" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Click="B_Ajouter_Click"/>
+            <!-- Boutton supprimer -->
+            <Button Name="B_Supprimer" Grid.Column="4" Content="Supprimer" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Click="B_Supprimer_Click"/>
         </Grid>
 
         <Grid Grid.Row="1">

@@ -31,7 +31,7 @@ namespace METEO2_taha_khelifi
             InitializeComponent();
 
             CB_Ville.ItemsSource = ville.LsVille;
-            ville.Addville();
+
         _: GetMeteo("Annecy");
         }
 
@@ -99,14 +99,62 @@ namespace METEO2_taha_khelifi
         }
 
 
-        private void CB_Ville_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+
+
+
+        // Cette méthode est appelée lorsque la sélection dans la ComboBox CB_Ville change.
+        private async void CB_Ville_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // Vérifie si un élément est sélectionné dans la ComboBox.
             if (CB_Ville.SelectedItem != null)
             {
-                string selectedCity = (CB_Ville.SelectedItem as ComboBoxItem).Content.ToString();
-                GetMeteo(selectedCity);
+                // Récupère la ville sélectionnée.
+                string selectedCity = CB_Ville.SelectedItem.ToString();
+
+                // Appelle la méthode GetMeteo pour obtenir les informations météorologiques pour la ville sélectionnée.
+                await GetMeteo(selectedCity);
             }
         }
+
+
+
+
+        // Cette méthode est appelée lorsque le bouton B_Ajouter est cliqué.
+        private void B_Ajouter_Click(object sender, RoutedEventArgs e)
+        {
+            // Ajoute une nouvelle ville à la liste de villes dans l'objet 'ville'.
+            ville.AjouterVille(TB_Nouveaux.Text);
+
+            // Réinitialise la source de données de la ComboBox pour refléter les modifications.
+            CB_Ville.ItemsSource = null;
+            CB_Ville.ItemsSource = ville.LsVille;
+        }
+
+
+
+        // Cette méthode est appelée lorsque le bouton B_Supprimer est cliqué.
+        private void B_Supprimer_Click(object sender, RoutedEventArgs e)
+        {
+            // Récupère la ville sélectionnée dans la ComboBox.
+            string selectedVille = CB_Ville.SelectedItem as string;
+
+            // Vérifie si la ville sélectionnée n'est pas nulle ou vide.
+            if (!string.IsNullOrEmpty(selectedVille))
+            {
+                // Appelle la méthode SupprimerVille pour supprimer la ville sélectionnée de la liste.
+                ville.SupprimerVille(selectedVille);
+
+                // Réinitialise la source de données de la ComboBox pour refléter les modifications.
+                CB_Ville.ItemsSource = null;
+                CB_Ville.ItemsSource = ville.LsVille;
+            }
+        }
+
+
+
+
+
 
 
 
@@ -212,5 +260,7 @@ namespace METEO2_taha_khelifi
             public FcstDay3 fcst_day_3 { get; set; }
 
         }
+
+
     }
 }

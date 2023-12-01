@@ -88,10 +88,10 @@ namespace METEO2_taha_khelifi
                     TB_Ville.Text = cityInfo.name + ", " + cityInfo.country;
 
 
+                   jour0.Source = await DownloadImage(fcstDay0.icon_big);
                    jour1.Source = await DownloadImage(fcstDay1.icon_big);
-                    jour2.Source = await DownloadImage(fcstDay2.icon_big);
-                    jour3.Source = await DownloadImage(fcstDay3.icon_big);
-                    jour4.Source = await DownloadImage(fcstDay0.icon_big);
+                   jour2.Source = await DownloadImage(fcstDay2.icon_big);
+                   jour3.Source = await DownloadImage(fcstDay3.icon_big);
 
 
 
@@ -116,11 +116,8 @@ namespace METEO2_taha_khelifi
         private async Task<ImageSource> DownloadImage(string imageUrl) // On télécharge l'image
 
         {
-
             try
-
             {
-
                 WebClient client = new WebClient(); // On crée un objet WebClient
 
                 byte[] imageData = await client.DownloadDataTaskAsync(new Uri(imageUrl)); // On télécharge l'image
@@ -140,21 +137,13 @@ namespace METEO2_taha_khelifi
                     bitmapImage.EndInit(); // On termine l'initialisation de l'objet BitmapImage
 
                 }
-
                 return bitmapImage; // On retourne l'image
-
             }
-
             catch (Exception ex) // Si une erreur est survenue
-
             {
-
                 MessageBox.Show("Erreur lors du téléchargement de l'image : " + ex.Message); // On affiche un message d'erreur
-
                 return null;
-
             }
-
         }
 
 

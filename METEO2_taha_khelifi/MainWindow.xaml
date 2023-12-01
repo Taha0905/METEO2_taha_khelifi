@@ -96,7 +96,7 @@
                 <Border Background="#2f5cb6"/>
                 <Border Grid.Column ="1" Background="#1f3d7a"/>
                 <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
-                <Image x:Name="jour1" Margin="20" Source="Ressources/Images/partially-cloudy.png"/>
+                <Image x:Name="jour0" Margin="20" Source="Ressources/Images/partially-cloudy.png"/>
                 <StackPanel Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center">
                     <TextBlock Name = "TB_temperature"  Foreground="White" FontSize="15" Text="Aujourd'hui"/>
                     <TextBlock Name="TB_condition" Foreground="White" FontSize="15" Text="Condition"/>
@@ -122,7 +122,7 @@
                 <Border Background="#2f5cb6"/>
                 <Border Grid.Column ="1" Background="#1f3d7a"/>
                 <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
-                <Image Margin="20" Source="Ressources/Images/partially-cloudy.png" Name="jour2"/>
+                <Image Margin="20" Source="Ressources/Images/partially-cloudy.png" Name="jour1"/>
                 <StackPanel Grid.Column="1" Margin="30,0,0,0" VerticalAlignment="Center">
 
                     <TextBlock Name="TB_conditionD" Foreground="White" FontSize="15" Text="Condition"/>
@@ -147,7 +147,7 @@
                 <Border Background="#2f5cb6"/>
                 <Border Grid.Column ="1" Background="#1f3d7a"/>
                 <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
-                <Image Margin="20" Source="Ressources/Images/partially-cloudy.png" Name="jour3"/>
+                <Image Margin="20" Source="Ressources/Images/partially-cloudy.png" Name="jour2"/>
                 <StackPanel Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center">
 
                     <TextBlock Name="TB_conditionAD" Foreground="White" FontSize="15" Text="Condition"/>
@@ -173,7 +173,7 @@
                 <Border Background="#2f5cb6"/>
                 <Border Grid.Column ="1" Background="#1f3d7a"/>
                 <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
-                <Image Margin="20" Source="Ressources/Images/partially-cloudy.png" Name="jour4"/>
+                <Image Margin="20" Source="Ressources/Images/partially-cloudy.png" Name="jour3"/>
                 <StackPanel Grid.Column="1" Margin="40,0,0,0" VerticalAlignment="Center">
 
                     <TextBlock Name="TB_condition3J" Foreground="White" FontSize="15" Text="Condition"/>

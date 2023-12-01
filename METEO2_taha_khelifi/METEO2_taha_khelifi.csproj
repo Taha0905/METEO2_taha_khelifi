@@ -108,5 +108,8 @@
   <ItemGroup>
     <Resource Include="Ressources\Images\ciel.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Ressources\Icons\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -16,6 +16,10 @@ using System.Net.Http; // pour HttpClient
 using Newtonsoft.Json; // pour JsonConvert
 using METEO2_taha_khelifi.Service;
 using static METEO2_taha_khelifi.MainWindow;
+using static System.Net.Mime.MediaTypeNames;
+using System.Net;
+using System.IO;
+using System.Xml.Linq;
 
 namespace METEO2_taha_khelifi
 {
@@ -84,6 +88,15 @@ namespace METEO2_taha_khelifi
                     TB_Ville.Text = cityInfo.name + ", " + cityInfo.country;
 
 
+                   jour1.Source = await DownloadImage(fcstDay1.icon_big);
+                    jour2.Source = await DownloadImage(fcstDay2.icon_big);
+                    jour3.Source = await DownloadImage(fcstDay3.icon_big);
+                    jour4.Source = await DownloadImage(fcstDay0.icon_big);
+
+
+
+
+
 
                     return "";
                 }
@@ -99,6 +112,50 @@ namespace METEO2_taha_khelifi
         }
 
 
+
+        private async Task<ImageSource> DownloadImage(string imageUrl) // On télécharge l'image
+
+        {
+
+            try
+
+            {
+
+                WebClient client = new WebClient(); // On crée un objet WebClient
+
+                byte[] imageData = await client.DownloadDataTaskAsync(new Uri(imageUrl)); // On télécharge l'image
+
+                BitmapImage bitmapImage = new BitmapImage(); // On crée un objet BitmapImage
+
+                using (MemoryStream stream = new MemoryStream(imageData)) // On crée un objet MemoryStream
+
+                {
+
+                    bitmapImage.BeginInit(); // On initialise l'objet BitmapImage
+
+                    bitmapImage.CacheOption = BitmapCacheOption.OnLoad; // On définit l'option de cache
+
+                    bitmapImage.StreamSource = stream; // On définit la source de l'image
+
+                    bitmapImage.EndInit(); // On termine l'initialisation de l'objet BitmapImage
+
+                }
+
+                return bitmapImage; // On retourne l'image
+
+            }
+
+            catch (Exception ex) // Si une erreur est survenue
+
+            {
+
+                MessageBox.Show("Erreur lors du téléchargement de l'image : " + ex.Message); // On affiche un message d'erreur
+
+                return null;
+
+            }
+
+        }
 
 
 

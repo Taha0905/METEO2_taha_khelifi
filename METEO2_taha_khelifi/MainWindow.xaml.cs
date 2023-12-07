@@ -307,6 +307,9 @@ namespace METEO2_taha_khelifi
 
         }
 
+        private void TB_Nouveaux_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
+        }
     }
 }

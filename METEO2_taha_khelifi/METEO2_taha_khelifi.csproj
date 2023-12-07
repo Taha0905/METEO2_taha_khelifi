@@ -111,5 +111,8 @@
   <ItemGroup>
     <Folder Include="Ressources\Icons\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Service\FichierVille.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

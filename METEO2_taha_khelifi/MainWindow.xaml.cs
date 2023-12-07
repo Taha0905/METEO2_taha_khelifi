@@ -65,21 +65,18 @@ namespace METEO2_taha_khelifi
                     //Info pour demain
                     FcstDay1 fcstDay1 = myDeserializedClass.fcst_day_1;
                     TB_Demain.Text = fcstDay1.day_long;
-                    TB_conditionD.Text = fcstDay1.condition;
                     TB_basD.Text = "Min : " + fcstDay1.tmin.ToString() + "°C";
                     TB_hautD.Text = "Max : " + fcstDay1.tmax.ToString() + "°C";
 
                     //Info pour après demain
                     FcstDay2 fcstDay2 = myDeserializedClass.fcst_day_2;
                     TB_ApresDemain.Text = fcstDay2.day_long;
-                    TB_conditionAD.Text = fcstDay2.condition;
                     TB_basAD.Text = "Min : " + fcstDay2.tmin.ToString() + "°C";
                     TB_hautAD.Text = "Max : " + fcstDay2.tmax.ToString() + "°C";
 
                     //Info pour après après demain
                     FcstDay3 fcstDay3 = myDeserializedClass.fcst_day_3;
                     TB_Dans3Jours.Text = fcstDay3.day_long;
-                    TB_condition3J.Text = fcstDay3.condition;
                     TB_bas3J.Text = "Min : " + fcstDay3.tmin.ToString() + "°C";
                     TB_haut3J.Text = "Max : " + fcstDay3.tmax.ToString() + "°C";
 

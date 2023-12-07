@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static METEO2_taha_khelifi.MainWindow;
 
 namespace METEO2_taha_khelifi.Service
 {

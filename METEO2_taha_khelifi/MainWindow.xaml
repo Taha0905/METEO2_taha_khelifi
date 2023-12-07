@@ -38,7 +38,7 @@
             <ComboBox Name="CB_Ville" Grid.Column="1" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="30" SelectionChanged="CB_Ville_SelectionChanged">
             </ComboBox>
             <!-- TB_Ecrit_Ville-->
-            <TextBox Name="TB_Nouveaux" Grid.Column="2" Foreground="Black" FontSize="30" Text="+-" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Name="TB_Nouveaux" Grid.Column="2" Foreground="Black" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Width="163" TextChanged="TB_Nouveaux_TextChanged"/>
             <!-- Boutton ajouter -->
             <Button Name="B_Ajouter" Grid.Column="3" Content="Ajouter" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Click="B_Ajouter_Click"/>
             <!-- Boutton supprimer -->

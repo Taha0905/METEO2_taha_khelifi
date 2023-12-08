@@ -112,7 +112,9 @@
     <Folder Include="Ressources\Icons\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Service\FichierVille.txt" />
+    <Content Include="Service\FichierVille.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,31 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static METEO2_taha_khelifi.MainWindow;
-
+using System.IO;
 namespace METEO2_taha_khelifi.Service
 {
     public class Ville
     {
+
+       // C:\Users\SLAB70\Downloads\C#\meteo2\METEO2_taha_khelifi\Service\FichierVille.txt
+        string Path = @"Service/FichierVille.txt";
         public List<string> LsVille;
         public Ville() {
 
             LsVille = new List<string>();
 
-            LsVille.Add("Annecy");
-            LsVille.Add("Marseille");
-            LsVille.Add("Lyon");
-            LsVille.Add("Bordeaux");
-            LsVille.Add("Toulouse");
-            LsVille.Add("Nice");
-            LsVille.Add("Strasbourg");
-            LsVille.Add("Nantes");
-            LsVille.Add("Montpellier");
-            LsVille.Add("Rennes");
-            LsVille.Add("Grenoble");
-            LsVille.Add("Toulon");
-            LsVille.Add("Dijon");
-            LsVille.Add("Angers");
-         
+            // Calling the ReadAllLines() function 
+            string[] TabVille = File.ReadAllLines(Path);
+
+            foreach (string ville in TabVille)
+            {
+                LsVille.Add(ville);
+            }
+        }
+
+        public List<string> GetVille()
+        {
+            return LsVille;
         }
 
         //fonction pour ajouter une ville qui est dans la TB_Nouveaux

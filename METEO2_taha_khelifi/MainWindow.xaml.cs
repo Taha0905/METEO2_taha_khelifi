@@ -34,7 +34,7 @@ namespace METEO2_taha_khelifi
             ville = new Ville();
             InitializeComponent();
 
-            CB_Ville.ItemsSource = ville.LsVille;
+            CB_Ville.ItemsSource = ville.GetVille();
 
         _: GetMeteo("Annecy");
         }

@@ -24,6 +24,7 @@ namespace METEO2_taha_khelifi.Service
             {
                 LsVille.Add(ville);
             }
+
         }
 
         public List<string> GetVille()

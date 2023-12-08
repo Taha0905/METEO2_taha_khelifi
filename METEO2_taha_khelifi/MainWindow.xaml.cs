@@ -20,6 +20,7 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Net;
 using System.IO;
 using System.Xml.Linq;
+using System.CodeDom.Compiler;
 
 namespace METEO2_taha_khelifi
 {
@@ -50,10 +51,14 @@ namespace METEO2_taha_khelifi
                     string result = await response.Content.ReadAsStringAsync();
                     Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(result);
 
+                    if (result.Contains("error"))
+                    {
+                        MessageBox.Show("Ville indisponible");
+                        return "";
+                    }
                     //Info pour ajourd'hui
                     FcstDay0 fcstDay0 = myDeserializedClass.fcst_day_0;
                     CurrentCondition currentCondition = myDeserializedClass.current_condition;
-
                     TB_temperature.Text = "Actuellement : " + currentCondition.tmp.ToString() + "°C";
                     TB_condition.Text = currentCondition.condition;
                     TB_Aujourdhui.Text = fcstDay0.day_long;
@@ -85,7 +90,11 @@ namespace METEO2_taha_khelifi
                     TB_Ville.Text = cityInfo.name + ", " + cityInfo.country;
 
 
-                   jour0.Source = await DownloadImage(fcstDay0.icon_big);
+
+                   Uri uri = new Uri(fcstDay0.icon_big);
+                    jour0.Source = new BitmapImage(uri);
+
+                   //jour0.Source = await DownloadImage(fcstDay0.icon_big);
                    jour1.Source = await DownloadImage(fcstDay1.icon_big);
                    jour2.Source = await DownloadImage(fcstDay2.icon_big);
                    jour3.Source = await DownloadImage(fcstDay3.icon_big);
@@ -148,16 +157,17 @@ namespace METEO2_taha_khelifi
 
         // Cette méthode est appelée lorsque la sélection dans la ComboBox CB_Ville change.
         private async void CB_Ville_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            // Vérifie si un élément est sélectionné dans la ComboBox.
-            if (CB_Ville.SelectedItem != null)
+            
             {
-                // Récupère la ville sélectionnée.
-                string selectedCity = CB_Ville.SelectedItem.ToString();
+                // Vérifie si un élément est sélectionné dans la ComboBox.
+                if (CB_Ville.SelectedItem != null)
+                {
+                    // Récupère la ville sélectionnée.
+                    string selectedCity = CB_Ville.SelectedItem.ToString();
 
-                // Appelle la méthode GetMeteo pour obtenir les informations météorologiques pour la ville sélectionnée.
-                await GetMeteo(selectedCity);
-            }
+                    // Appelle la méthode GetMeteo pour obtenir les informations météorologiques pour la ville sélectionnée.
+                    await GetMeteo(selectedCity);
+                }
         }
 
 
